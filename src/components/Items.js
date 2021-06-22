@@ -17,13 +17,14 @@ export default function Items(props) {
             {isEdit?
             <div>
                 <textarea onChange={newInputChange} className="editTask" type="text" cols="10" rows="3"></textarea>
-                {newText?<button className="saveTask" 
+                <button className="saveTask" 
                 onClick={()=>{
                     handleChangeInList(item.id,newText);
                     setIsedit(!isEdit);
                     setNewtext("");
                 }}
-                >Save</button>:""}
+                disabled={!newText?true:false}
+                >Save</button>
             </div>:""}
         </div>
     )

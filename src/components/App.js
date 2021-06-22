@@ -12,6 +12,7 @@ function App()
 		setInput(text);
 	}
 	const addTasks = () =>{
+		if(!input)return;
 		let list = {
 			id: Date.now(),
 			todo: input,
@@ -21,6 +22,7 @@ function App()
 	}
 	
 	const handleChangeInList = (id,newText) =>{
+		if(!newText)return;
 		let tasks = todolist.map((elem)=> {
 			if(elem.id == id){
 				elem.todo = newText;
